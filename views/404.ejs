@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 Not Found</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 6rem;
+      margin-bottom: 20px;
+      color: #333;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    p {
+      font-size: 1.5rem;
+      color: #666;
+      margin-bottom: 30px;
+    }
+
+    a {
+      text-decoration: none;
+      color: #007bff;
+      transition: color 0.3s ease;
+    }
+
+    a:hover {
+      color: #0056b3;
+    }
+
+    .glitch {
+      color: #ff0000;
+      position: relative;
+      display: inline-block;
+    }
+
+    .glitch::before,
+    .glitch::after {
+      content: attr(data-text);
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .glitch::before {
+      left: 2px;
+      text-shadow: -2px 0 #00ff00;
+      clip: rect(44px, 550px, 54px, 0);
+      animation: glitch-anim-1 2.5s infinite linear alternate-reverse;
+    }
+
+    .glitch::after {
+      left: -2px;
+      text-shadow: -2px 0 #0000ff;
+      clip: rect(24px, 550px, 34px, 0);
+      animation: glitch-anim-2 2.5s infinite linear alternate-reverse;
+    }
+
+    @keyframes glitch-anim-1 {
+
+      0%,
+      20%,
+      40%,
+      60%,
+      80%,
+      100% {
+        clip: rect(44px, 9999px, 54px, 0);
+      }
+
+      10% {
+        clip: rect(77px, 9999px, 97px, 0);
+      }
+
+      30% {
+        clip: rect(49px, 9999px, 90px, 0);
+      }
+
+      50% {
+        clip: rect(15px, 9999px, 36px, 0);
+      }
+
+      70% {
+        clip: rect(40px, 9999px, 10px, 0);
+      }
+
+      90% {
+        clip: rect(94px, 9999px, 7px, 0);
+      }
+    }
+
+    @keyframes glitch-anim-2 {
+
+      0%,
+      20%,
+      40%,
+      60%,
+      80%,
+      100% {
+        clip: rect(24px, 9999px, 34px, 0);
+      }
+
+      10% {
+        clip: rect(47px, 9999px, 67px, 0);
+      }
+
+      30% {
+        clip: rect(65px, 9999px, 18px, 0);
+      }
+
+      50% {
+        clip: rect(61px, 9999px, 3px, 0);
+      }
+
+      70% {
+        clip: rect(89px, 9999px, 49px, 0);
+      }
+
+      90% {
+        clip: rect(17px, 9999px, 28px, 0);
+      }
+    }
+
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 4rem;
+      }
+
+      p {
+        font-size: 1.2rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1><span class="glitch" data-text="404">404</span></h1>
+    <p>Oops! Page not found.</p>
+    <p>Go back to <a href="/">homepage</a>.</p>
+  </div>
+</body>
+
+</html>

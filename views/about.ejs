@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Waza Gaza</title>
+    <!-- Linking to the favicon -->
+    <link rel="shortcut icon" href="./img/img (1).jpg" type="image/x-icon" />
+    <!-- Linking to external stylesheets -->
+    <link rel="stylesheet" href="/styles/style.css" />
+    <link rel="stylesheet" href="/styles/about.css" />
+    <!-- Linking to Font Awesome for icons -->
+    <link rel="stylesheet" href="./fontawesome/css/all.min.css" />
+  </head>
+  <body>
+    <!-- Main container -->
+    <div class="container">
+      <!-- Button to scroll to the top -->
+      <button class="to-top-btn"><i class="fas fa-chevron-up"></i></button>
+
+      <!-- Header section -->
+      <section class="header">
+        <!-- Navigation bar toggler button -->
+        <label id="nav-bar-toggler" class="nav-bar-toggler"
+          ><i class="fas fa-bars"></i
+        ></label>
+
+        <!-- Logo and text -->
+        <div class="img-wrapper">
+          <img class="logo" src="./img/img (40).jpg" alt="Waza Gaza Logo" />
+        </div>
+
+        <div class="logo-text">
+          <h1>About <span id="auto-typed"></span></h1>
+          <p>Welcome to the world of Waza Gaza.</p>
+        </div>
+      </section>
+
+      <!-- Navigation bar -->
+      <div class="nav-bar border-style">
+        <label id="nav-bar-toggler" class="nav-bar-toggler"
+          ><i class="fas fa-bars"></i
+        ></label>
+        <ul>
+          <!-- Navigation links -->
+          <li><a href="/">Home</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/gallery">Gallery</a></li>
+          <li><a href="/contact">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Main content section -->
+      <section class="main border-style full-page">
+        <!-- About section -->
+        <div class="about-section">
+          <h3>About <span>Waza Gaza</span></h3><br/>
+          <p>Introducing Waza Gaza, the ultimate drip master and boxing aficionado!</p>
+          <br/>
+          <p>
+           Waza Gaza isn't just your average dude – he's got style for miles and punches that'll knock your socks off. This guy lives for the drip, always rocking the freshest threads and staying ahead of the fashion game.
+          </p>
+          <br/>
+          <p>When he's not turning heads with his killer style, you can find Waza Gaza throwing down in the boxing ring. He's got moves smoother than butter and a knockout punch that'll leave you seeing stars.</p>
+          <br/>
+          <p>But don't let his tough exterior fool you – Waza Gaza's got a heart of gold and a sense of humor that'll have you rolling on the floor laughing. He's the kind of guy you want in your corner, whether you're looking for fashion advice or a sparring partner.</p>
+          <br/>
+          <p>But don't let his tough exterior fool you – Waza Gaza's got a heart of gold and a sense of humor that'll have you rolling on the floor laughing. He's the kind of guy you want in your corner, whether you're looking for fashion advice or a sparring partner.</p>
+          <br/>
+          <p>So if you're ready to step up your style game and unleash your inner champ, Waza Gaza is your go-to guy. Get ready to drip and dip with the best of them – Waza Gaza is here to show you how it's done.</p>
+        </div>
+
+        <!-- Waza's Interests Section -->
+        <div class="interests-section about-section">
+          <h3>Waza's <span>Interests</span></h3>
+
+          <ul>
+            <li>Dripper</li>
+            <li>Photographer</li>
+            <li>Boxer</li>
+            <li>Soccer Lover</li>
+            <li>Artist</li>
+            <li>Fashion Enthusiast</li>
+            <li>Musician</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Footer section -->
+      <section class="footer border-style">
+        <p>
+          &copy; 2024 Waza Gaza. All Rights Reserved. Designed by
+          <a href="https://about.me/shakiranter">Shakir Anter</a>
+        </p>
+      </section>
+    </div>
+    <!-- Scripts -->
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script src="./scripts/main.js"></script>
+    <script>
+      // Function to navigate to different pages when a user clicks on the buttons in the sections
+      function navigateTo(href) {
+        window.location.href = href;
+      }
+    </script>
+
+    <script>
+      // Function to navigate to different pages when a user clicks on the buttons in the sections
+      function navigateTo(href) {
+        window.location.href = href;
+      }
+
+      // Typed.js options for automatic typing effect
+      var typed_options = {
+        strings: ["Waza", "Gaza"],
+        typeSpeed: 120,
+        backSpeed: 100,
+        loop: true,
+      };
+
+      // Initializing Typed.js
+      var typed = new Typed("#auto-typed", typed_options);
+    </script>
+  </body>
+</html>

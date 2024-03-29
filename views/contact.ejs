@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Waza Gaza</title>
+  <link rel="shortcut icon" href="./img/img (1).jpg" type="image/x-icon" />
+  <link rel="stylesheet" href="/styles/style.css" />
+  <link rel="stylesheet" href="/styles/contact.css" />
+  <link rel="stylesheet" href="./fontawesome/css/all.min.css" />
+  <link rel="stylesheet" href="./fontawesome/css/brands.min.css" />
+  <link rel="stylesheet" href="./fontawesome/css/regular.min.css" />
+  <link rel="stylesheet" href="./fontawesome/css/solid.min.css" />
+  <script src="./fontawesome/js/all.min.js" defer></script>
+</head>
+
+<body>
+  <div class="container">
+    <button class="to-top-btn"><i class="fa-solid fa-chevron-up"></i></button>
+
+    <section class="header">
+      <label id="nav-bar-toggler" class="nav-bar-toggler"><i class="fas fa-bars"></i></label>
+
+      <div class="img-wrapper">
+        <img class="logo" src="./img/img (40).jpg" alt="Waza Gaza Logo" />
+      </div>
+
+      <div class="logo-text">
+        <h1>Contact Me</h1>
+        <p>Welcome To South Gang Drip. Waza Gaza Slaying it.</p>
+      </div>
+    </section>
+
+    <div class="nav-bar border-style">
+      <label id="nav-bar-toggler" class="nav-bar-toggler"><i class="fas fa-bars"></i></label>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/gallery">Gallery</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </div>
+
+    <section class="main border-style">
+      <div class="form-wrapper">
+        <h2>Contact Me</h2>
+        <p>
+          Yo, wanna hit me up? Drop a message using the form below. Got
+          questions, dope ideas, or just wanna chat? Holla at ya boy!
+        </p>
+
+        <form action="/contact" method="post" id="contact-form">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" placeholder="e.g John Doe" />
+
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" placeholder="e.g johndoe@gmail.com" />
+
+          <label for="msg">Message:</label>
+          <textarea name="msg" id="msg" cols="30" rows="3" placeholder="Type In Your Message"></textarea>
+
+          <small class="form-status"></small>
+
+          <div id="statusMessage-container">
+            <h1 class="status">Success</h1>
+            <p class="messageStatus">Message Sent successfully</p>
+            <button class="statusBtn">Close</button>
+          </div>
+
+          <button type="submit" id="sendemail-btn">Send</button>
+        </form>
+      </div>
+
+      <div class="contact-info social-links-icons">
+        <h2>Connect with Me</h2>
+        <ul>
+          <li>
+            <a href="#"><i class="fa-brands fa-facebook"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fa-solid fa-envelope"></i></a>
+          </li>
+        </ul>
+
+        <!-- Replace "your-embed-code" with your actual Google Maps embed code -->
+        <div class="google-maps">
+          <h3>Visit Us</h3>
+
+          <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3259.4787102472105!2d32.6318599276611!3d0.2625315114327265!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMMKwMTUnNDUuMCJOIDMywrAzNyc1NC43IkU!5e0!3m2!1sen!2sug!4v1708552374225!5m2!1sen!2sug" width="100%" height="300" frameborder="0" style="border: 0" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+        </div>
+      </div>
+    </section>
+
+    <section class="footer border-style">
+      <p>
+        &copy; Copy Right 2024. Waza Gaza. Designed by
+        <a href="https://about.me/shakiranter">Shakir Anter</a>
+      </p>
+    </section>
+  </div>
+  <script src="./scripts/main.js"></script>
+  <script>
+    //   Function To Navigate To Different Pages When A User Clicks on the buttons in the sections
+    function navigateTo(href) {
+      window.location.href = href;
+    }
+
+    const contactForm = document.getElementById("contact-form");
+
+    contactForm.addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      const statusMessageContainer = document.getElementById(
+        "statusMessage-container"
+      );
+      const status = document.querySelector(".status");
+      const messageStatus = document.querySelector(".messageStatus");
+      const statusBtn = document.querySelector(".statusBtn");
+
+      let name = document.getElementById("name").value;
+      let email = document.getElementById("email").value;
+      let message = document.getElementById("msg").value;
+      let formStatus = document.querySelector(".form-status");
+
+      // Check if inputs are empty
+      if (!name || !email || !message) {
+        formStatus.textContent = "Please fill out all fields.";
+        formStatus.classList.add("red-statusMessage");
+        return;
+      }
+
+      try {
+        formStatus.textContent = "Sending..";
+
+        const response = await fetch("/contact", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            name,
+            email,
+            msg: message
+          }),
+        });
+
+        if (response.ok) {
+          formStatus.textContent = "Your Message Was Sent Successfully";
+          formStatus.style.color = "green";
+          contactForm.reset();
+          setTimeout(() => {
+            formStatus.style.display = "none";
+          }, 3000);
+
+        } else {
+          formStatus.textContent = "An Error Occurred!! Please try again";
+          formStatus.style.color = "red";
+        }
+      } catch (error) {
+        formStatus.textContent = "Error Sending Message. Please Try Again";
+        console.log(error);
+        formStatus.style.color = "red";
+      }
+    });
+  </script>
+</body>
+
+</html>

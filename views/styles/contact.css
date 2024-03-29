@@ -1,0 +1,107 @@
+/* Add these styles to your existing CSS */
+
+.form-wrapper {
+  align-items: center;
+  justify-content: center;
+  
+}
+
+.form-wrapper form {
+  width: 100%;
+  max-width: 600px; /* Adjust as needed */
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-wrapper form h2 {
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+.form-wrapper form p {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.form-wrapper form label {
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+.form-wrapper form input,
+.form-wrapper form textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+  color: #333;
+}
+
+.form-wrapper form textarea {
+  height: auto;
+}
+
+.form-wrapper form input:focus,
+.form-wrapper form textarea:focus {
+  outline: 2px solid rgb(223, 28, 28);
+  border-color: rgb(223, 28, 28);
+}
+
+#statusMessage{
+  color: white;
+  font-size: 20px;
+}
+#statusMessage-container{
+  position: fixed;
+  top: 50%; /* Center vertically */
+  left: 50%; /* Center horizontally */
+  transform: translate(-50%, -50%); /* Center the div precisely */
+  background-color: rgb(68, 184, 78); /* Semi-transparent background */
+  padding: 50px;
+  border-radius: 10px;
+  color: white;
+  text-align: center;
+  z-index: 9999; /* Ensure it's above other content */
+  display: none;
+}
+.red-statusMessage{
+  color: red;
+}
+.green-statusMessage{
+  color: green;
+}
+
+.form-wrapper form button {
+  width: 100%;
+  margin-top: 15px;
+  background-color: rgb(223, 28, 28);
+  border-radius: 5px;
+  transition: .2s;
+}
+.form-wrapper form button:hover{
+  transform: scale(1);
+  background-color: rgb(141, 76, 76);
+}
+.contact-info ul{
+  display: flex;
+}
+.google-maps{
+  width: 100%;
+  height: 100%;
+}
+
+@media screen and (min-width: 810px) {
+  .form-wrapper{
+    border-right: 1px solid rgb(95, 92, 92);
+  }
+  .google-maps{
+    margin-right: 30px;
+  }
+}

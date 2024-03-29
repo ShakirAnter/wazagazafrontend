@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Waza Gaza</title>
+  <!-- Linking to the favicon -->
+  <link rel="shortcut icon" href="./img/img (1).jpg" type="image/x-icon">
+  <!-- Linking to external stylesheets -->
+  <link rel="stylesheet" href="/styles/style.css">
+  <!-- Linking to Font Awesome for icons -->
+  <link rel="stylesheet" href="./fontawesome/css/all.min.css">
+</head>
+
+<body>
+  <!-- Main container -->
+  <div class="container">
+
+    <!-- Button to scroll to the top -->
+    <button class="to-top-btn"><i class="fas fa-chevron-up"></i></button>
+
+    <!-- Header section -->
+    <section class="header">
+      <!-- Navigation bar toggler button -->
+      <label id="nav-bar-toggler" class="nav-bar-toggler"><i class="fas fa-bars"></i></label>
+
+      <!-- Logo and text -->
+      <div class="img-wrapper">
+        <img class="logo" src="./img/img (40).jpg" alt="Waza Gaza Logo" />
+      </div>
+
+      <div class="logo-text">
+        <h1>Waza <span id="auto-typed"></span></h1>
+        <p>Welcome To South Gang Drip. Waza Gaza Slaying it.</p>
+      </div>
+    </section>
+
+    <!-- Navigation bar -->
+    <div class="nav-bar border-style">
+      <label id="nav-bar-toggler" class="nav-bar-toggler"><i class="fas fa-bars"></i></label>
+      <ul>
+        <!-- Navigation links -->
+        <li><a href="/">Home</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/gallery">Gallery</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- Main content section -->
+    <section class="main border-style">
+      <!-- Social links -->
+      <div class="social-links-icons">
+        <h3>Connect with Me</h3>
+        <p>Explore My social media profiles below</p>
+
+        <ul>
+          <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+          <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+          <li><a href="#"><i class="fab fa-whatsapp"></i></a></li>
+          <li><a href="#"><i class="fas fa-envelope"></i></a></li>
+        </ul>
+
+        <!-- Button to navigate to the contact section -->
+        <button onclick="navigateTo('contact')">More <i class="fas fa-chevron-right"></i></button>
+      </div>
+
+      <!-- About section -->
+      <div class="section-break"></div>
+
+      <div class="about-section">
+        <h3>About <span>Waza Gaza</span></h3>
+        <p>Discover the essence of Waza Gaza, a multifaceted personality.</p>
+
+        <ul>
+          <li>Dripper</li>
+          <li>Photographer</li>
+          <li>Boxer</li>
+          <li>Soccer Lover</li>
+          <li>Artist</li>
+          <li>Fashion Enthusiast</li>
+          <li>Musician</li>
+        </ul>
+        <!-- Button to navigate to the about section -->
+        <button onclick="navigateTo('about')">Read More <i class="fas fa-chevron-right"></i></button>
+      </div>
+
+      <!-- Photographer section -->
+      <div class="section-break"></div>
+
+      <div class="photographer-section">
+        <h3>Photographer</h3>
+        <p>Experience the world through the lens of Waza Gaza.</p>
+        <!-- Image grid -->
+        <div class="images-grid">
+          <div class="image-wrapper">
+            <img src="./img/img (42).jpg" alt="">
+          </div>
+          <div class="image-wrapper">
+            <img src="./img/img (43).jpg" alt="">
+          </div>
+          <div class="image-wrapper">
+            <img src="./img/img (36).jpg" alt="">
+          </div>
+          <div class="image-wrapper">
+            <img src="./img/img (37).jpg" alt="">
+          </div>
+        </div>
+        <!-- Button to navigate to the gallery section -->
+        <button onclick="navigateTo('gallery')">See More Art Pieces <i class="fas fa-chevron-right"></i></button>
+      </div>
+
+      <!-- Single image container -->
+      <div class="single-image-overlay"></div>
+
+      <div class="section-break"></div>
+
+    </section>
+
+    <!-- Footer section -->
+    <section class="footer border-style">
+      <p>&copy; 2024 Waza Gaza. All Rights Reserved. Designed by <a href="https://about.me/shakiranter">Shakir Anter</a></p>
+    </section>
+  </div>
+  <!-- Scripts -->
+  <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+  <script src="./scripts/main.js"></script>
+  <script>
+    // Function to navigate to different pages when a user clicks on the buttons in the sections
+    function navigateTo(href) {
+      window.location.href = href;
+    }
+
+    // Typed.js options for automatic typing effect
+    var typed_options = {
+      strings: ["Gaza", "Dripper", "Photographer", "Boxer"],
+      typeSpeed: 120,
+      backSpeed: 100,
+      loop: true
+    };
+
+    // Initializing Typed.js
+    var typed = new Typed("#auto-typed", typed_options);
+  </script>
+</body>
+
+</html>
